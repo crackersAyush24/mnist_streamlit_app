@@ -6,7 +6,7 @@ This is a Streamlit app to classify handwritten digits (0-9) using a trained Ker
 
 1. Clone the repo:
 ```bash
-git clone https://github.com/your-username/mnist_streamlit_app.git
+git clone https://github.com/crackersAyush24/mnist_streamlit_app.git
 
 
 
