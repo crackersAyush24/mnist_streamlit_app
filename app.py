@@ -39,3 +39,24 @@ if uploaded_file is not None:
         img = img.resize((28, 28))
         img_array = img_to_array(img)
         img_array = img_array.reshape(1, 784).astype("float32") / 255.0
+
+        # --- Prediction ---
+        prediction = model.predict(img_array)
+        predicted_class = int(np.argmax(prediction))
+        confidence = float(np.max(prediction)) * 100
+
+    st.success(f"### 🔮 Predicted Digit: **{predicted_class}**")
+    st.progress(int(confidence))
+    st.write(f"**Confidence:** {confidence:.2f}%")
+
+    # Optional: show prediction probabilities
+    with st.expander("📊 View All Prediction Probabilities"):
+        probs = {str(i): float(prediction[0][i]) * 100 for i in range(10)}
+        st.bar_chart(probs)
+
+    # Fun footer
+    st.markdown("---")
+    st.caption("🤖 Built with TensorFlow + Streamlit | Powered by Ayush’s MNIST Classifier")
+
+else:
+    st.info("👆 Upload a digit image to start classification.")
