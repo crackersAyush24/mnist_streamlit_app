@@ -1,5 +1,5 @@
 # MNIST Digit Classifier
-
+#download reqquirement files
 This is a Streamlit app to classify handwritten digits (0-9) using a trained Keras model on the MNIST dataset.
 
 ## How to Run
